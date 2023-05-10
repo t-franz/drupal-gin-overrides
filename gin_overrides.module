@@ -8,18 +8,21 @@
  */
 function gin_overrides_preprocess_html(&$variables) {
 
-  $primaryColor = 'blue';
-  $moduleHandler = \Drupal::service('module_handler');
-  if ($moduleHandler->moduleExists('contact')) {
-    $config = \Drupal::config('custom_company_token.settings');
-    $primaryColor = $config->get('color');
-  };
+  $current_theme = \Drupal::theme()->getActiveTheme()->getName();
+  if ($current_theme === 'gin') {
+    $primaryColor = 'blue';
+    $moduleHandler = \Drupal::service('module_handler');
+    if ($moduleHandler->moduleExists('contact')) {
+      $config = \Drupal::config('custom_company_token.settings');
+      $primaryColor = $config->get('color');
+    };
 
-  $style = [
-    '#tag' => 'style',
-    '#value' => ":root {\n --primary: ".$primaryColor.";\n}",
-  ];
-  $variables['page']['#attached']['html_head'][] = [$style, 'gin-overrides'];
+    $style = [
+      '#tag' => 'style',
+      '#value' => ":root {\n --primary: ".$primaryColor.";\n}",
+    ];
+    $variables['page']['#attached']['html_head'][] = [$style, 'gin-overrides'];
+  }
 }
 
 /**
