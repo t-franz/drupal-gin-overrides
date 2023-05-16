@@ -1,5 +1,5 @@
 {
-    "name": "t-franz/gin-overrides",
+    "name": "t-franz/gin_overrides",
     "description": "This is a very simple module to override the styles for Gin-theme with a custom CSS-file",
     "type": "drupal-module",
     "license": "GPL-2.0-or-later",
