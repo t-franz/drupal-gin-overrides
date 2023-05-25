@@ -110,6 +110,7 @@
 .lp-builder .paragraph.grid-1-2.grid .field__items {
   grid-template-columns: repeat(1, 1fr);
 }
+
 @media screen and (min-width: 450px) {
   .lp-builder .paragraph.grid-1-2.grid .field__items {
     grid-template-columns: repeat(2, 1fr);
@@ -150,6 +151,10 @@
   }
 }
 
+.lpb-component-list__group--content {
+  padding-bottom: 20px;
+}
+
 
 
 
@@ -169,10 +174,12 @@
 }
 
 /* Better cursor for link-select */
-.ck-reset_all .linkit-result-line--title,
-.ck-reset_all .linkit-result-line,
-.ck-reset_all .linkit-result-line-wrapper,
-.ck-reset_all .linkit-result-line--description,
+.ck.ck-reset_all .linkit-result-line--title,
+.ck.ck-reset_all .linkit-result-line,
+.ck.ck-reset_all .linkit-result-line-wrapper,
+.ck.ck-reset_all .linkit-result-line--description,
+.ck.ck-reset_all :not(.ck-reset_all-excluded *) .linkit-result-line,
+.ck.ck-reset_all :not(.ck-reset_all-excluded *) .linkit-result-line>*,
 .linkit-result-line-wrapper,
 .linkit-result-line--title,
 .linkit-ui-autocomplete .linkit-result-line--description,
